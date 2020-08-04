@@ -1,0 +1,14 @@
+<mat-toolbar color="primary">
+    <span><a [routerLink]="['']" class="tabs">My App</a></span>
+    <span class="space-right"></span>
+    <ul>
+        <span *ngIf="userIsAuthenticated">
+            <li><button mat-button [routerLink]="['create']" routerLinkActive="highlight" class="tabs">Create</button></li>
+            <li><button mat-button class="tabs" (click)="onLogout()">Logout</button></li>
+        </span>
+        <span *ngIf="!userIsAuthenticated">
+            <li><button mat-button [routerLink]="['signup']" routerLinkActive="highlight" class="tabs">Signup</button></li>
+            <li><button mat-button [routerLink]="['login']" routerLinkActive="highlight" class="tabs">Login</button></li>
+        </span>
+    </ul>
+</mat-toolbar>

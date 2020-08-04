@@ -1,0 +1,26 @@
+<mat-card>
+    <!-- <mat-spinner *ngIf="isLoading"></mat-spinner> -->
+    <mat-progress-bar mode="indeterminate" color="accent" *ngIf="isLoading"></mat-progress-bar>
+    <form (submit)="onSavePost(formDirective)" [formGroup]="form" *ngIf="!isLoading" #formDirective="ngForm">
+        <mat-form-field>
+            <mat-label>Title</mat-label>
+            <input type="text" formControlName="title" matInput>
+        </mat-form-field>
+        <div style="padding-bottom: 15px;">
+            <button type="button" mat-raised-button (click)="filePicker.click()">
+                <mat-icon>file_upload</mat-icon>
+                Upload Image
+            </button>
+            <input type="file" #filePicker (change)="onImagePicked($event)" style="display: none;">
+        </div>
+        <div class="image-preview" [class.disp-img]="imagePreview === null || form.get('image').invalid">
+            <img [src]="imagePreview" [alt]="filename">
+            <label style="padding-left: 20px;">{{ filename }}</label>
+        </div>
+        <mat-form-field class="textarea">
+            <mat-label>Body</mat-label>
+            <textarea matInput formControlName="body"></textarea>
+        </mat-form-field>
+        <button mat-flat-button color="accent" type="submit" [disabled]="form.invalid">Save Post</button>
+    </form>
+</mat-card>

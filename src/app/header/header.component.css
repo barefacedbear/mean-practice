@@ -1,0 +1,21 @@
+.tabs {
+    text-decoration: none;
+    color: white;
+}
+span {
+    display: flex;
+}
+ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+.space-right {
+    flex: 1 1 auto;
+}
+.highlight
+{
+    background-color: white;
+    color: #3F51B5;
+}
