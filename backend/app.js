@@ -7,7 +7,7 @@ const postsApp = require('./routes/route');
 const usersApp = require('./routes/user');
 
 // Connecting app with mongodb, always replace 'test' in url with a database name
-mongoose.connect('mongodb+srv://barefacedbear:zwEc9qGJXuiwo78O@training-2izn7.mongodb.net/blog-demo?retryWrites=true&w=majority',
+mongoose.connect('mongodb+srv://username:password@training-2izn7.mongodb.net/blog-demo?retryWrites=true&w=majority',
 {useNewUrlParser: true, useUnifiedTopology: true})
 .then(() => {
     console.log('connected');
